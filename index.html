@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Cuestionario Guerra de las Malvinas</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    h2 { color: darkred; }
+    .pregunta { margin-bottom: 25px; border-bottom: 1px solid #ccc; padding-bottom: 10px; }
+    .respuesta { width: 100%; padding: 5px; margin-top: 5px; }
+    .correcto { color: green; font-weight: bold; margin-top: 5px; }
+    .incorrecto { color: red; font-weight: bold; margin-top: 5px; }
+    button { margin-top: 20px; padding: 10px 20px; font-size: 16px; }
+  </style>
+</head>
+<body>
+  <h2>Cuestionario: Guerra de las Malvinas</h2>
+  <form id="cuestionario"></form>
+
+  <script>
+const preguntas = [
+
+    ["¿Cuál es el nivel más alto de la Pirámide de Kelsen según la legislación ecuatoriana?", "Constitución", ["Constitución", "Leyes Orgánicas", "Tratados y convenios internacionales", "Decretos y reglamentos"]],
+    ["¿Cuál de los siguientes instrumentos pertenece al nivel de 'Tratados y convenios internacionales' en la pirámide jurídica?", "Convenios de Ginebra de 1949", ["Acuerdos y resoluciones", "Leyes Ordinarias", "Convenios de Ginebra de 1949", "Ordenanzas distritales"]],
+    ["¿Cuál es el propósito del Derecho de la Haya del 08 de octubre de 1907 según el marco legal presentado?", "Humanizar la guerra estableciendo límites al desarrollo de los conflictos armados.", ["Regular las guerras civiles dentro de los Estados.", "Humanizar la guerra estableciendo límites al desarrollo de los conflictos armados.", "Fortalecer la soberanía nacional frente a agresiones externas.", "Establecer tratados comerciales en tiempos de guerra."]],
+    ["¿Qué establece el artículo 3 común a los convenios de Ginebra del 12 de agosto de 1949?", "Normas para conflictos armados no internacionales.", ["Reglas para conflictos armados internacionales.", "Normas sobre tratados de paz entre naciones.", "Disposiciones sobre el uso de armas químicas.", "Normas para conflictos armados no internacionales."]],
+    ["¿Qué establece la Convención de 1972 respecto a las armas biológicas?", "Prohíbe el desarrollo, almacenamiento y producción de armas bacteriológicas.", ["Permite su uso en conflictos internacionales bajo supervisión.", "Regula únicamente la transferencia de armas químicas.", "Prohíbe el desarrollo, almacenamiento y producción de armas bacteriológicas.", "Establece el uso de estas armas solo en defensa propia."]],
+    ["¿Cuál es el objetivo principal de la convención de 1980 sobre ciertas armas convencionales?", "Regular armas convencionales excesivamente nocivas o de efectos indiscriminados.", ["Regular armas convencionales excesivamente nocivas o de efectos indiscriminados.","Establecer normas para el uso de armas nucleares.", "Prohibir el uso de cualquier arma en conflictos armados.",  "Permitir el uso libre de minas antipersonales en guerras."]],
+    ["¿Cuál fue el objetivo principal de la Convención de Ottawa de 1997?", "Prohibir las minas antipersonales y establecer su destrucción.", ["Proteger los bienes culturales durante conflictos armados.", "Prohibir el uso de gases tóxicos en guerras.", "Establecer reglas sobre la posesión de armas nucleares.", "Prohibir las minas antipersonales y establecer su destrucción."]],
+    ["¿A qué se refiere la Convención de La Haya de 1954?", "A la protección del patrimonio cultural en caso de conflicto armado.", ["A la protección del medio ambiente en guerras prolongadas.", "A la protección del patrimonio cultural en caso de conflicto armado.", "A la regulación de armas de destrucción masiva.", "A la prohibición del uso de minas y trampas."]],
+    ["¿Qué prohibición establece la Declaración de San Petersburgo de 1868?", "Uso de determinados proyectiles en tiempos de guerra.", ["Uso de armas biológicas en conflictos armados.", "Ataques contra objetivos civiles.", "Uso de determinados proyectiles en tiempos de guerra.", "Bombardeos aéreos en zonas urbanas."]],
+    ["¿Qué establece el Estatuto de Roma mencionado en el marco legal?", "Creación de una Corte Penal Internacional permanente.", ["Protección de sitios naturales y reservas en tiempos de guerra.", "Creación de una Corte Penal Internacional permanente.", "Regulación del comercio internacional de armas.", "Prohibición de municiones en racimo."]],
+    ["¿Cuál es uno de los elementos fundamentales del origen del Derecho Internacional Humanitario (DIH)?", "Fundamentos históricos del DIH.", ["Aplicación de sanciones económicas.", "Fundamentos históricos del DIH.", "Tratados comerciales multilaterales.", "Normas de derecho penal interno."]],
+    ["¿Qué organización tiene un rol importante en la aplicación y desarrollo del Derecho Internacional Humanitario?", "El CICR y el Movimiento Internacional de la Cruz Roja y Media Luna Roja.", ["La ONU y la OEA.", "El Parlamento Europeo.", "El CICR y el Movimiento Internacional de la Cruz Roja y Media Luna Roja.", "El Consejo de Seguridad de la ONU."]],
+    ["Según la evolución del Derecho Internacional Humanitario (DIH), ¿cuál fue su punto de partida histórico?", "El campo religioso.", ["El campo religioso.", "Los convenios de Ginebra.", "Las resoluciones de Naciones Unidas.", "El derecho penal internacional."]],
+    ["¿Cuál es una de las necesidades fundamentales que dio origen al Derecho Internacional Humanitario?", "Establecer normas para limitar la violencia.", ["Garantizar el derecho a la defensa legítima.", "Establecer tratados económicos.", "Establecer normas para limitar la violencia.", "Regular las relaciones diplomáticas."]],
+    ["¿Qué caracteriza el nacimiento del Derecho Internacional Humanitario Moderno?", "El cambio del campo religioso al derecho positivo.", ["La adopción de resoluciones por el Consejo de Seguridad.", "El cambio del campo religioso al derecho positivo.", "La voluntad de los Estados expresada exclusivamente en tratados bilaterales.", "La aplicación del derecho penal interno."]],
+    ["¿Cuál es una de las bases del Derecho Internacional Humanitario como derecho positivo?", "La voluntad de los Estados expresada en costumbres y tratados internacionales.", ["Las decisiones del poder judicial internacional.", "La opinión pública internacional.", "La voluntad de los Estados expresada en costumbres y tratados internacionales.", "Las recomendaciones de organismos humanitarios."]],
+    ["¿Quién fue el fundador del Comité Internacional de la Cruz Roja (CICR) en 1859?", "Henry Dunant", ["Jean Pictet", "Zar Alejandro II", "Gustave Moynier","Henry Dunant"]],
+    ["¿Cuál fue la contribución del Zar Alejandro II al Derecho Internacional Humanitario?", "Impulsó la Declaración de San Petersburgo de 1868 para prohibir armas inhumanas.", ["Redactó los Convenios de Ginebra", "Apoyó la expansión del DIH en América Latina", "Impulsó la Declaración de San Petersburgo de 1868 para prohibir armas inhumanas", "Estableció la Cruz Roja Internacional"]],
+    ["Durante la expansión del DIH en el siglo XX, ¿qué eventos facilitaron su desarrollo?", "Conferencias y tratados, incluyendo los Convenios de La Haya.", ["Reformas constitucionales de los países firmantes.", "Conferencias y tratados, incluyendo los Convenios de La Haya.", "Decisiones de la Corte Internacional de Justicia.", "Publicaciones académicas del Comité de Viena."]],
+    ["¿Qué aspecto caracterizó la expansión del DIH respecto a los grupos protegidos?", "Extensión de la protección a nuevas categorías y situaciones de conflicto.", ["Reducción de protección a prisioneros de guerra.", "Enfoque exclusivo en militares heridos.", "Extensión de la protección a nuevas categorías y situaciones de conflicto.", "Protección solo en conflictos internacionales."]],
+    ["¿En qué contexto se aplica el Derecho Internacional Humanitario (DIH)?", "En contextos de conflicto armado.", ["En elecciones democráticas.", "En manifestaciones públicas pacíficas.", "En situaciones de tensión política interna.", "En contextos de conflicto armado."]],
+    ["Según el marco legal del DIH, ¿cuál es una obligación de los Estados respecto a su aplicación?", "Difundir y educar sobre el DIH.", ["Difundir y educar sobre el DIH.", "Intervenir militarmente en otros países.", "Mantener la neutralidad diplomática.", "Reformar su sistema judicial interno."]],
+    ["¿Cuál fue una de las acciones clave en la promoción y desarrollo del Derecho Internacional Humanitario (DIH)?", "Conferencias diplomáticas y presión para la aprobación de tratados.", ["Reformas constitucionales en países aliados.", "Aprobación de normas penales internas.", "Conferencias diplomáticas y presión para la aprobación de tratados.", "Acuerdos económicos multilaterales."]],
+    ["¿Con qué fecha se relaciona la participación de Ecuador en el Derecho Internacional Humanitario según la imagen?", "12 de agosto de 1949", ["12 de junio de 1954", "12 de agosto de 1949", "10 de octubre de 1907", "9 de noviembre de 1977"]],
+    ["¿Cuál es uno de los objetivos fundamentales del Derecho Internacional Humanitario?", "Proteger a las personas que no participan o han dejado de participar en los conflictos armados.", ["Promover tratados económicos entre países beligerantes.", "Controlar las rutas comerciales en zonas de conflicto.", "Proteger a las personas que no participan o han dejado de participar en los conflictos armados.", "Limitar el acceso a recursos naturales en guerra."]],
+    ["¿A qué tipo de normas pertenece el Derecho Internacional Humanitario?", "Normas internacionales, como tratados, convenios y acuerdos consuetudinarios.", ["Normas exclusivamente penales.", "Normas internacionales, como tratados, convenios y acuerdos consuetudinarios.", "Normas religiosas nacionales.", "Normas administrativas locales."]],
+    ["¿Cuál es otro nombre con el que también se conoce al Derecho Internacional Humanitario?", "Derecho de la guerra.", ["Derecho ambiental.", "Derecho de la guerra.", "Derecho constitucional.", "Derecho penal internacional."]],
+    ["¿A qué personas busca proteger el Derecho Internacional Humanitario?", "A las personas que no participan o han dejado de participar en los conflictos armados.", ["A quienes participan activamente en las hostilidades.", "A las autoridades políticas durante el conflicto.", "A las personas que no participan o han dejado de participar en los conflictos armados.", "A los jueces y fiscales de tribunales militares."]],
+    ["¿A quiénes impone obligaciones principalmente el Derecho Internacional Humanitario (DIH)?", "A los miembros de las Fuerzas Armadas.", ["A los medios de comunicación.", "A las organizaciones humanitarias.", "A las empresas de armamento.", "A los miembros de las Fuerzas Armadas."]],
+    ["¿Cuál es uno de los objetivos del DIH en relación con los conflictos armados?", "Limitar los métodos y medios para hacer la guerra.", ["Impedir completamente los enfrentamientos militares.", "Promover acuerdos económicos durante la guerra.", "Intervenir en política interna de los Estados.", "Limitar los métodos y medios para hacer la guerra."]],
+    ["¿Cuál de los siguientes es un principio fundamental del Derecho Internacional Humanitario?", "Principio de humanidad", ["Principio de soberanía territorial", "Principio de doble incriminación", "Principio de humanidad", "Principio de oportunidad procesal"]],
+    ["¿Qué principio del DIH establece que no se deben dirigir ataques contra personas civiles?", "Principio de distinción", ["Principio de necesidad jurídica", "Principio de proporcionalidad", "Principio de soberanía", "Principio de distinción"]],
+    ["¿Qué establece el Principio de Humanidad del Derecho Internacional Humanitario?", "Que toda persona debe ser tratada con humanidad y sin discriminación.", ["Que toda persona debe ser tratada con humanidad y sin discriminación.", "Que el uso de armas letales debe estar limitado por la ONU.", "Que los civiles pueden participar activamente en combate.", "Que los tratados solo aplican en conflictos internacionales."]],
+    ["Según el Principio de Humanidad, ¿qué se debe hacer con un soldado enemigo que se rinde en combate?", "Tratarlo con respeto y brindarle atención médica si es necesario.", ["Juzgarlo en tribunales internacionales automáticamente.", "Tratarlo con respeto y brindarle atención médica si es necesario.", "Deportarlo a su país de origen.", "Mantenerlo incomunicado sin contacto exterior."]],
+    ["¿Cuál es el criterio que define el Principio de Necesidad Militar?", "Toda actividad de combate debe justificarse por motivos militares.", ["Toda operación debe ser aprobada por organismos internacionales.", "Los conflictos deben finalizar por medios diplomáticos.", "El uso de armas químicas está permitido si hay amenaza.", "Toda actividad de combate debe justificarse por motivos militares."]],
+    ["Según el Principio de Necesidad Militar, ¿qué debe hacerse si un objetivo militar está en un edificio con civiles?", "Buscar una alternativa que minimice el riesgo para los no combatientes.", ["Buscar una alternativa que minimice el riesgo para los no combatientes.", "Continuar con el ataque si hay soldados presentes.", "Tomar el edificio sin importar las bajas.", "Destruir completamente la zona como medida preventiva."]],
+    ["¿Qué establece el Principio de Limitación en el Derecho Internacional Humanitario?", "Que están prohibidas las armas que causan sufrimientos innecesarios o daños superfluos.", ["Que se debe informar a la prensa antes de cada ataque.", "Que los conflictos deben resolverse diplomáticamente.", "Que las armas nucleares pueden usarse sin restricciones.", "Que están prohibidas las armas que causan sufrimientos innecesarios o daños superfluos."]],
+    ["Según el Principio de Limitación, ¿por qué se prohíbe el uso de armas químicas?", "Porque causan sufrimientos indiscriminados y prolongados.", ["Porque violan acuerdos comerciales.", "Porque no son eficaces en espacios abiertos.", "Porque causan sufrimientos indiscriminados y prolongados.", "Porque requieren entrenamiento especializado."]],
+    ["¿Qué busca evitar el Principio de Proporcionalidad en el Derecho Internacional Humanitario?", "Daños colaterales excesivos en personas civiles y bienes respecto a la ventaja militar esperada", ["El uso de fuerza aérea en cualquier circunstancia", "Daños mínimos en infraestructura militar", "La destrucción total del enemigo a cualquier costo", "Daños colaterales excesivos en personas civiles y bienes respecto a la ventaja militar esperada"]],
+    ["Según el Principio de Proporcionalidad, ¿qué debe hacerse si un bombardeo puede causar numerosas bajas civiles?", "Reconsiderar el ataque debido al posible daño desproporcionado", ["Ejecutarlo con más poder de fuego", "Reconsiderar el ataque debido al posible daño desproporcionado", "Intensificar el ataque para acabar el conflicto rápidamente", "Cancelarlo solo si hay presencia de medios internacionales"]],
+    ["¿Qué principio se aplica cuando un ataque debe suspenderse si se advierte que causará daños excesivos a civiles en relación con la ventaja militar?", "Proporcionalidad", ["Proporcionalidad", "Necesidad militar", "Distinción", "Humanidad"]],
+    ["¿Qué principio se refleja en la prohibición de usar minas antipersonales que causan heridas graves mucho después del conflicto?", "Limitación", ["Distinción", "Humanidad", "Limitación", "Proporcionalidad"]],
+    ["¿Cuál de las siguientes es una clasificación reconocida de los conflictos armados?", "Conflicto armado no internacional", ["Conflicto jurídico internacional", "Conflicto armado no internacional", "Conflicto civil no tipificado", "Conflicto preventivo diplomático"]],
+    ["¿Qué tipo de conflicto armado ocurre cuando un conflicto interno involucra apoyo o intervención extranjera directa?", "Conflicto interno internacionalizado", ["Conflicto binacional interestatal", "Conflicto militar multilateral", "Conflicto híbrido regional", "Conflicto interno internacionalizado"]],
+
+
+
+
+];
+
+    
+    // Función para aleatorizar las opciones
+    function shuffle(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+      return array;
+    }
+
+    const form = document.getElementById("cuestionario");
+    preguntas.forEach(([pregunta, respuestaCorrecta, opciones], i) => {
+      // Aleatorizar las opciones
+      const opcionesAleatorias = shuffle([...opciones]);
+
+      form.innerHTML += `
+        <div class="pregunta">
+          <label><strong>${i + 1}. ${pregunta}</strong></label><br>
+          ${opcionesAleatorias
+            .map(
+              (opcion) =>
+                `<label><input type="radio" name="respuesta${i}" value="${opcion}"> ${opcion}</label><br>`
+            )
+            .join("")}
+          <button type="button" onclick="verificarRespuesta(${i}, '${respuestaCorrecta}')">Verificar</button>
+          <div id="feedback${i}"></div>
+        </div>
+      `;
+    });
+
+    function verificarRespuesta(index, respuestaCorrecta) {
+      const opciones = document.getElementsByName(`respuesta${index}`);
+      let seleccion = "";
+      opciones.forEach((opcion) => {
+        if (opcion.checked) seleccion = opcion.value;
+      });
+
+      const feedback = document.getElementById(`feedback${index}`);
+      if (seleccion === respuestaCorrecta) {
+        feedback.innerHTML = "✅ <span class='correcto'>Correcto</span>";
+      } else {
+        feedback.innerHTML = `❌ <span class='incorrecto'>Incorrecto. Respuesta esperada: ${respuestaCorrecta}</span>`;
+      }
+    }
+  </script>
+</body>
+</html>
