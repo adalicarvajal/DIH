@@ -37,7 +37,7 @@ const preguntas = [
     ["¿Qué caracteriza el nacimiento del Derecho Internacional Humanitario Moderno?", "El cambio del campo religioso al derecho positivo.", ["La adopción de resoluciones por el Consejo de Seguridad.", "El cambio del campo religioso al derecho positivo.", "La voluntad de los Estados expresada exclusivamente en tratados bilaterales.", "La aplicación del derecho penal interno."]],
     ["¿Cuál es una de las bases del Derecho Internacional Humanitario como derecho positivo?", "La voluntad de los Estados expresada en costumbres y tratados internacionales.", ["Las decisiones del poder judicial internacional.", "La opinión pública internacional.", "La voluntad de los Estados expresada en costumbres y tratados internacionales.", "Las recomendaciones de organismos humanitarios."]],
     ["¿Quién fue el fundador del Comité Internacional de la Cruz Roja (CICR) en 1859?", "Henry Dunant", ["Jean Pictet", "Zar Alejandro II", "Gustave Moynier","Henry Dunant"]],
-    ["¿Cuál fue la contribución del Zar Alejandro II al Derecho Internacional Humanitario?", "Impulsó la Declaración de San Petersburgo de 1868 para prohibir armas inhumanas.", ["Redactó los Convenios de Ginebra", "Apoyó la expansión del DIH en América Latina", "Impulsó la Declaración de San Petersburgo de 1868 para prohibir armas inhumanas", "Estableció la Cruz Roja Internacional"]],
+    ["¿Cuál fue la contribución del Zar Alejandro II al Derecho Internacional Humanitario?", "Impulso la Declaracion de San Petersburgo de 1868 para prohibir armas inhumanas.", ["Redactó los Convenios de Ginebra.", "Apoyó la expansión del DIH en América Latina.", "Estableció la Cruz Roja Internacional.", "Impulso la Declaracion de San Petersburgo de 1868 para prohibir armas inhumanas."]],
     ["Durante la expansión del DIH en el siglo XX, ¿qué eventos facilitaron su desarrollo?", "Conferencias y tratados, incluyendo los Convenios de La Haya.", ["Reformas constitucionales de los países firmantes.", "Conferencias y tratados, incluyendo los Convenios de La Haya.", "Decisiones de la Corte Internacional de Justicia.", "Publicaciones académicas del Comité de Viena."]],
     ["¿Qué aspecto caracterizó la expansión del DIH respecto a los grupos protegidos?", "Extensión de la protección a nuevas categorías y situaciones de conflicto.", ["Reducción de protección a prisioneros de guerra.", "Enfoque exclusivo en militares heridos.", "Extensión de la protección a nuevas categorías y situaciones de conflicto.", "Protección solo en conflictos internacionales."]],
     ["¿En qué contexto se aplica el Derecho Internacional Humanitario (DIH)?", "En contextos de conflicto armado.", ["En elecciones democráticas.", "En manifestaciones públicas pacíficas.", "En situaciones de tensión política interna.", "En contextos de conflicto armado."]],
@@ -47,7 +47,7 @@ const preguntas = [
     ["¿Cuál es uno de los objetivos fundamentales del Derecho Internacional Humanitario?", "Proteger a las personas que no participan o han dejado de participar en los conflictos armados.", ["Promover tratados económicos entre países beligerantes.", "Controlar las rutas comerciales en zonas de conflicto.", "Proteger a las personas que no participan o han dejado de participar en los conflictos armados.", "Limitar el acceso a recursos naturales en guerra."]],
     ["¿A qué tipo de normas pertenece el Derecho Internacional Humanitario?", "Normas internacionales, como tratados, convenios y acuerdos consuetudinarios.", ["Normas exclusivamente penales.", "Normas internacionales, como tratados, convenios y acuerdos consuetudinarios.", "Normas religiosas nacionales.", "Normas administrativas locales."]],
     ["¿Cuál es otro nombre con el que también se conoce al Derecho Internacional Humanitario?", "Derecho de la guerra.", ["Derecho ambiental.", "Derecho de la guerra.", "Derecho constitucional.", "Derecho penal internacional."]],
-    ["¿A qué personas busca proteger el Derecho Internacional Humanitario?", "A las personas que no participan o han dejado de participar en los conflictos armados.", ["A quienes participan activamente en las hostilidades.", "A las autoridades políticas durante el conflicto.", "A las personas que no participan o han dejado de participar en los conflictos armados.", "A los jueces y fiscales de tribunales militares."]],
+    ["¿A qué personas busca proteger el Derecho Internacional Humanitario?", "A las personas que no participan o han dejado de participar en los conflictos armados y A quienes participan activamente en las hostilidades.", ["A quienes participan activamente en las hostilidades.", "A las autoridades políticas durante el conflicto.", "A las personas que no participan o han dejado de participar en los conflictos armados y A quienes participan activamente en las hostilidades.", "A los jueces y fiscales de tribunales militares."]],
     ["¿A quiénes impone obligaciones principalmente el Derecho Internacional Humanitario (DIH)?", "A los miembros de las Fuerzas Armadas.", ["A los medios de comunicación.", "A las organizaciones humanitarias.", "A las empresas de armamento.", "A los miembros de las Fuerzas Armadas."]],
     ["¿Cuál es uno de los objetivos del DIH en relación con los conflictos armados?", "Limitar los métodos y medios para hacer la guerra.", ["Impedir completamente los enfrentamientos militares.", "Promover acuerdos económicos durante la guerra.", "Intervenir en política interna de los Estados.", "Limitar los métodos y medios para hacer la guerra."]],
     ["¿Cuál de los siguientes es un principio fundamental del Derecho Internacional Humanitario?", "Principio de humanidad", ["Principio de soberanía territorial", "Principio de doble incriminación", "Principio de humanidad", "Principio de oportunidad procesal"]],
@@ -114,52 +114,82 @@ const preguntas = [
     ["Durante una inspección en un conflicto armado internacional, se detecta que una unidad militar está empleando proyectiles con materiales venenosos. ¿Qué dispone el DIH?", "Están prohibidos por causar sufrimiento innecesario.", ["Pueden usarse si su impacto es inmediato.", "Están prohibidos por causar sufrimiento innecesario.", "Son legales si solo se emplean en objetivos militares.", "Se permite su uso en áreas deshabitadas."]],
     ["Una fuerza militar identifica una zona sanitaria claramente delimitada con heridos y personal médico. ¿Cuál debe ser la conducta conforme al DIH?", "Respetar su neutralidad y abstenerse de atacar.", ["Rodearla e interrogar al personal médico.", "Respetar su neutralidad y abstenerse de atacar.", "Bombardearla si hay sospecha de presencia enemiga.", "Intervenirla si no hay observadores internacionales."]],
     ["Un comandante busca obtener información del enemigo utilizando a civiles como escudo humano durante una ofensiva. ¿Qué establece el DIH?", "Es una violación grave al principio de distinción y está prohibido.", ["Está permitido si se garantiza la vida del civil.", "Es una violación grave al principio de distinción y está prohibido.", "Se justifica si hay necesidad militar urgente.", "Puede hacerse en zonas ocupadas."]],
+    ["¿Cuál es el procedimiento a seguir con respecto al personal civil?", "Protegerlos y no hacerlos objeto de ataque directo", ["Detenerlos inmediatamente para interrogarlos", "Retirarlos de las zonas de combate sin garantías", "Protegerlos y no hacerlos objeto de ataque directo", "Considerarlos como combatientes si permanecen en el área"]],
+    ["¿Qué significa la guerra sin cuartel?", "Guerra en la que no se respetan las normas del DIH ni se toman prisioneros", ["Guerra que no tiene pausas ni treguas", "Guerra en la que no se respetan las normas del DIH ni se toman prisioneros", "Guerra de resistencia prolongada", "Guerra sin participación de civiles"]],
+    ["¿Qué se debe hacer en caso de tener que abandonar a heridos o enfermos enemigos bajo nuestro cuidado?", "Garantizar su atención y protección sin discriminación", ["Dejarlos si no hay medios de transporte", "Garantizar su atención y protección sin discriminación", "Informar a sus familiares", "Entregarlos a un hospital local"]],
+    ["¿Es factible confiscar algún tipo de propiedad privada según las RDE?", "Solo en caso de necesidad militar justificada", ["Solo si se trata de bienes culturales", "Solo en caso de necesidad militar justificada", "No, bajo ninguna circunstancia", "Sí, si hay orden del comandante"]],
+    ["¿Se pueden usar emblemas o signos distintivos remedando funciones protegidas según el principio de necesidad?", "No, se considera perfidia y está prohibido", ["Sí, como estrategia de distracción", "No, se considera perfidia y está prohibido", "Solo en zonas desmilitarizadas", "Si es para salvar vidas"]],
+    ["¿Cuál es el límite mínimo de las Reglas de Enfrentamiento?", "Respeto a la vida y la dignidad humana", ["Uso de la fuerza en defensa propia", "Respeto a la vida y la dignidad humana", "Intervención de la ONU", "Prioridad en el objetivo militar"]],
+    ["¿Cuál es el procedimiento a seguir cuando encontramos combatientes heridos enemigos?", "Brindar asistencia médica y protección sin discriminación", ["Brindar asistencia médica y protección sin discriminación", "Dejar al criterio del mando", "Detenerlos y aislarlos", "Tomarlos como prisioneros automáticamente"]],
+    ["¿Cuál es el límite máximo de las Reglas de Enfrentamiento?", "La proporcionalidad en el uso de la fuerza y evitar sufrimiento innecesario", ["La duración del conflicto", "La proporcionalidad en el uso de la fuerza y evitar sufrimiento innecesario", "El armamento disponible", "Las bajas civiles permitidas"]],
+    ["¿En caso de existir duda, bajo qué principio se suspende el ataque?", "Principio de precaución o humanidad", ["Principio de ventaja militar", "Principio de neutralidad", "Principio de precaución o humanidad", "Principio de soberanía"]],
+    ["¿Cómo son considerados los periodistas que cubren eventos en zonas de combate?", "Civiles protegidos, si no participan en hostilidades", ["Combatientes informativos", "Civiles protegidos, si no participan en hostilidades", "Personal médico", "Observadores militares"]],
+    ["¿Qué son y para qué sirven los signos distintivos?", "Para identificar personas, instalaciones o vehículos protegidos por el DIH", ["Para marcar zonas ocupadas", "Para identificar personas, instalaciones o vehículos protegidos por el DIH", "Para distinguir bandos", "Para marcar puntos estratégicos"]],
+    ["¿Cuál fue la iniciativa de Zar Alejandro II?", "Convocar la Conferencia de Bruselas para codificar las leyes de la guerra", ["Crear el Comité Internacional de la Cruz Roja", "Convocar la Conferencia de Bruselas para codificar las leyes de la guerra", "Firmar el primer convenio de Ginebra", "Promover el uso de armas no letales"]],
+    ["¿Cuál es el concepto general del DIH?", "Normas que limitan los efectos de los conflictos armados y protegen a personas no participantes", ["Derecho que regula conflictos civiles", "Normas de derecho civil en combate", "Normas que limitan los efectos de los conflictos armados y protegen a personas no participantes", "Reglamento para castigar a enemigos"]],
+    ["¿Qué establece el Principio de Humanidad?", "Tratar con dignidad a todos, incluso enemigos heridos", ["Priorizar a los nacionales", "Tratar con dignidad a todos, incluso enemigos heridos", "Usar armamento humanitario", "Apoyar solo a civiles"]],
+    ["¿Qué indica el Principio de Necesidad Militar?", "El uso de la fuerza debe justificarse por un objetivo militar válido", ["Solo se puede atacar con armas modernas", "Siempre que se tenga superioridad", "El uso de la fuerza debe justificarse por un objetivo militar válido", "Atacar incluso sin justificación"]],
+    ["¿Qué prohíbe el Principio de Limitación?", "Uso de armas que causen sufrimientos innecesarios", ["Ataques en zonas sin civiles", "Uso de armas que causen sufrimientos innecesarios", "Uso de armas pequeñas", "Uso de apoyo aéreo"]],
+    ["¿Qué implica el Principio de Distinción?", "Distinguir entre combatientes y civiles para evitar ataques a estos últimos", ["Distinguir entre enemigos y aliados", "Distinguir entre zonas rurales y urbanas", "Distinguir entre combatientes y civiles para evitar ataques a estos últimos", "Distinguir entre soldados y oficiales"]],
+    ["¿Qué impone el Principio de Proporcionalidad?", "No causar daños civiles excesivos respecto a la ventaja militar obtenida", ["Atacar solo si hay más soldados", "No causar daños civiles excesivos respecto a la ventaja militar obtenida", "Evitar fuego cruzado", "Priorizar el combate cuerpo a cuerpo"]],
+    ["¿Cómo se clasifican los conflictos armados?", "Conflictos armados internacionales y no internacionales", ["Internos y externos", "Simples y complejos", "Conflictos armados internacionales y no internacionales", "Temporales y prolongados"]],
+    ["¿Cuál es un ejemplo de cada tipo de conflicto armado?", "Guerra entre estados (CAI) y conflicto interno entre gobierno y grupo armado (CANI)", ["Guerra civil y guerra biológica", "Guerra entre estados (CAI) y conflicto interno entre gobierno y grupo armado (CANI)", "Guerra de guerrillas y guerra urbana", "Conflicto fronterizo y guerra nuclear"]],
+    ["¿Quién fundó la Cruz Roja Internacional en 1859?", "Henry Dunant", ["Napoleón III", "Henry Dunant", "Jean Pictet", "Alejandro II"]],
+    ["¿Cuáles son los principios fundamentales del DIH?", "Humanidad, necesidad militar, distinción, proporcionalidad, limitación", ["Defensa, soberanía, autoridad", "Protección, resistencia, ataque", "Humanidad, necesidad militar, distinción, proporcionalidad, limitación", "Neutralidad, unidad, imparcialidad"]],
+    ["¿El DIH también se conoce como DICA, DG y DB?", "Sí, son otras formas de referirse al derecho de la guerra", ["No", "Sí, son otras formas de referirse al derecho de la guerra", "Solo en Europa", "Solo en conflictos internos"]],
+    ["¿Es el DIH lo mismo que los Derechos Humanos?", "No, el DIH se aplica en conflicto armado, los DDHH en todo momento", ["No, el DIH se aplica en conflicto armado, los DDHH en todo momento", "Sí, son lo mismo", "Solo en guerra", "Solo para civiles"]],
+    ["Según el DIH, ¿está prohibido reclutar menores de...?", "15 años", ["18 años", "16 años", "15 años", "14 años"]],
+    ["¿A qué hacen referencia los 5 protocolos de la Convención de 1980?", "A la prohibición o restricción de ciertas armas convencionales como minas, trampas, armas incendiarias", ["A tratados nucleares", "A derechos de los civiles", "A la prohibición o restricción de ciertas armas convencionales como minas, trampas, armas incendiarias", "A la protección diplomática"]],
+    ["¿Quién es el protagonista principal del video y qué vivió en junio de 1859?", "Henry Dunant, presencia la batalla de Solferino y la crisis humanitaria", ["Jean Pictet, firma del Convenio", "Henry Dunant, presencia la batalla de Solferino y la crisis humanitaria", "Alejandro II, combate en Suiza", "Napoleón III, batalla de Crimea"]],
+    ["¿Qué hizo Henry Dunant tras ver lo ocurrido en Solferino?", "Organizó ayuda para los heridos sin distinción", ["Regresó y se retiró del activismo", "Se enlistó como voluntario", "Organizó ayuda para los heridos sin distinción", "Se convirtió en comandante militar"]],
+    ["¿Cuál fue su propuesta al regresar a Suiza tras escribir su libro sobre Solferino?", "Crear sociedades voluntarias de socorro para asistir a heridos en guerra", ["Crear hospitales militares", "Crear sociedades voluntarias de socorro para asistir a heridos en guerra", "Formar una milicia", "Publicar tratados políticos"]],
+    ["¿Qué evento importante ocurrió en 1864 como resultado de su propuesta?", "Firma del Primer Convenio de Ginebra", ["Batalla de Ginebra", "Firma del Primer Convenio de Ginebra", "Fundación de la ONU", "Creación de la Corte Penal Internacional"]],
+    ["¿Cómo se expandió su iniciativa después de las guerras mundiales?", "Se fortaleció el CICR y se ampliaron los Convenios de Ginebra", ["Se disolvió", "Se privatizó", "Se fortaleció el CICR y se ampliaron los Convenios de Ginebra", "Se trasladó a Asia"]],
 ];
 
-    
-    // Función para aleatorizar las opciones
-    function shuffle(array) {
-      for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-      }
-      return array;
-    }
+// Función para aleatorizar las opciones
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
 
-    const form = document.getElementById("cuestionario");
-    preguntas.forEach(([pregunta, respuestaCorrecta, opciones], i) => {
-      // Aleatorizar las opciones
-      const opcionesAleatorias = shuffle([...opciones]);
+const form = document.getElementById("cuestionario");
+preguntas.forEach(([pregunta, respuestaCorrecta, opciones], i) => {
+  // Aleatorizar las opciones
+  const opcionesAleatorias = shuffle([...opciones]);
 
-      form.innerHTML += `
-        <div class="pregunta">
-          <label><strong>${i + 1}. ${pregunta}</strong></label><br>
-          ${opcionesAleatorias
-            .map(
-              (opcion) =>
-                `<label><input type="radio" name="respuesta${i}" value="${opcion}"> ${opcion}</label><br>`
-            )
-            .join("")}
-          <button type="button" onclick="verificarRespuesta(${i}, '${respuestaCorrecta}')">Verificar</button>
-          <div id="feedback${i}"></div>
-        </div>
-      `;
-    });
+  form.innerHTML += `
+    <div class="pregunta">
+      <label><strong>${i + 1}. ${pregunta}</strong></label><br>
+      ${opcionesAleatorias
+        .map(
+          (opcion) =>
+            `<label><input type="radio" name="respuesta${i}" value="${opcion}"> ${opcion}</label><br>`
+        )
+        .join("")}
+      <button type="button" onclick="verificarRespuesta(${i}, '${respuestaCorrecta.replace(/'/g, "\\'")}')">Verificar</button>
+      <div id="feedback${i}"></div>
+    </div>
+  `;
+});
 
-    function verificarRespuesta(index, respuestaCorrecta) {
-      const opciones = document.getElementsByName(`respuesta${index}`);
-      let seleccion = "";
-      opciones.forEach((opcion) => {
-        if (opcion.checked) seleccion = opcion.value;
-      });
+function verificarRespuesta(index, respuestaCorrecta) {
+  const opciones = document.getElementsByName(`respuesta${index}`);
+  let seleccion = "";
+  opciones.forEach((opcion) => {
+    if (opcion.checked) seleccion = opcion.value;
+  });
 
-      const feedback = document.getElementById(`feedback${index}`);
-      if (seleccion === respuestaCorrecta) {
-        feedback.innerHTML = "✅ <span class='correcto'>Correcto</span>";
-      } else {
-        feedback.innerHTML = `❌ <span class='incorrecto'>Incorrecto. Respuesta esperada: ${respuestaCorrecta}</span>`;
-      }
-    }
-  </script>
-</body>
-</html>
+  // Normalizar las cadenas para evitar problemas de comparación
+  const normalize = (str) => str.trim().toLowerCase();
+  const feedback = document.getElementById(`feedback${index}`);
+  if (normalize(seleccion) === normalize(respuestaCorrecta)) {
+    feedback.innerHTML = "✅ <span class='correcto'>Correcto</span>";
+  } else {
+    feedback.innerHTML = `❌ <span class='incorrecto'>Incorrecto. Respuesta esperada: ${respuestaCorrecta}</span>`;
+  }
+}
+</script>
